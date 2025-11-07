@@ -1,0 +1,40 @@
+# =========================
+# AnyLink Configuration
+# =========================
+
+# Main listening endpoints
+listen:
+  ws: ":8080"         # WebSocket server (use wss:// if TLS enabled)
+  quic: ":4242"       # QUIC listener address
+  tcp: ":9000"        # Optional TCP entrypoint for local bridging
+
+# Bridge & Connection Settings
+bridge:
+  read_timeout: 45s
+  tcp_pool_size: 16   # Max TCP connections kept per target
+
+# Security (TLS / QUIC)
+tls:
+  enable: true                # Enable TLS 1.3
+  rotate_interval: 12h        # Automatic self-signed certificate rotation
+  enable_client_auth: false   # Require client certificates
+  client_ca_path: ""          # Optional CA bundle for client verification
+
+# Allowed destinations
+allowed_targets:
+  - "127.0.0.1:22"     # SSH local
+  - "10.0.0.1:3306"     # Database test
+  - "*.internal.local"  # Optional domain wildcard
+
+# Logging configuration
+logging:
+  level: debug   # quiet | error | info | debug | trace
+
+# QUIC-specific parameters
+quic:
+  max_streams: 64
+  idle_timeout: 30s
+
+# Self-test
+selftest:
+  enable: false   # Run WS+QUIC validation and exit
