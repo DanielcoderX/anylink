@@ -9,6 +9,12 @@ It’s designed for **high-performance tunneling**, with:
 - Configurable logging levels
 - Optional self-test mode
 - Bridge-level metrics and flow tracking
+<p align="start">
+  <a href="https://golang.org"><img src="https://img.shields.io/badge/Go-1.23%2B-blue?logo=go"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg"></a>
+  <a href="#"><img src="https://img.shields.io/badge/WebSocket-Enabled-orange?logo=websocket"></a>
+  <a href="#"><img src="https://img.shields.io/badge/QUIC-Supported-lightblue?logo=quic"></a>
+</p>
 
 ---
 
